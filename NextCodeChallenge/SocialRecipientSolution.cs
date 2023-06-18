@@ -11,7 +11,7 @@ namespace NextCodeChallnge
             Regex regex = new Regex("@[a-zA-Z0-9_-][\\w'-]+");
             var recipients = regex.Matches(message);
 
-            return position > recipients.Count ? string.Empty : recipients[position - 1].Value;
+            return position > recipients.Count ? string.Empty : recipients[position - 1].Value.Remove(0, 1);
         }
 
         public string GetRecipient_UsingWhile(string message, int position)
