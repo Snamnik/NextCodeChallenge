@@ -8,7 +8,7 @@ namespace NextCodeChallnge
         {
             if (position < 1) return string.Empty;
 
-            Regex regex = new Regex("@[A-Za-z1-9_-]+");
+            Regex regex = new Regex("@[A-Za-z0-9_-]+");
             var recipients = regex.Matches(message);
 
             return position > recipients.Count ? string.Empty : recipients[position - 1].Value.Remove(0, 1);
